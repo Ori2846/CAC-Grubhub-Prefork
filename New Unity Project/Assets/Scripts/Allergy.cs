@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using TMPro;
+using UnityEngine.UI;
 public class Allergy : MonoBehaviour
 {
     
@@ -15,6 +16,8 @@ public class Allergy : MonoBehaviour
     public GameObject SignInPanel; 
     public GameObject MainScreenPanel; 
     public TMP_Text[] Password;
+    public Scrollbar bar;
+    public bool barb=false;
 
     
     void Start()
@@ -73,6 +76,19 @@ public class Allergy : MonoBehaviour
             Debug.Log("here");
         }
         Password[1].text = hiddenpassword;
+
+        if(barb)
+        {
+        //bar = gameObject.GetComponent<Scrollbar>();
+        if(bar.value < 1)
+        {
+            bar.value += 0.025f;
+        } else
+        {
+            barb=!barb;
+        }
+        
+        }
     }
     public void ShowPassword()
     {
@@ -86,5 +102,12 @@ public class Allergy : MonoBehaviour
             Password[0].color = new Color32(34, 34, 34, 0);
             Password[1].color = new Color32 (34,34,34,255);;
         }
+    }
+    
+ 
+    public void BackUp()
+    {
+        barb = true;
+
     }
 }
