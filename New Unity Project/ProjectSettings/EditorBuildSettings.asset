@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/SlurpinRamen.unity
+    guid: 7e60e23b26fd3b74ca44abe2b3f325d7
   m_configObjects: {}
