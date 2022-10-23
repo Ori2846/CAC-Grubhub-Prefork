@@ -9,10 +9,12 @@ public class Allergy : MonoBehaviour
     // Start is called before the first frame update
 
     public bool SignIn = true;
+    public bool ShowPasswordBool = false;
     public TMP_Text[] SignInText;    
     public TMP_Text SignUpText;   
     public GameObject SignInPanel; 
     public GameObject MainScreenPanel; 
+    public TMP_Text[] Password;
 
     
     void Start()
@@ -63,6 +65,26 @@ public class Allergy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        string text = Password[0].text;
+        string hiddenpassword = "";
+        for (int i = 1; i < text.Length; i++)
+        {
+            hiddenpassword += "*";
+            Debug.Log("here");
+        }
+        Password[1].text = hiddenpassword;
+    }
+    public void ShowPassword()
+    {
+        ShowPasswordBool = !ShowPasswordBool;
+        if(ShowPasswordBool)
+        {
+            Password[1].color = new Color32(34, 34, 34, 0);
+            Password[0].color = new Color32(34, 34, 34, 255);
+        } else
+        {
+            Password[0].color = new Color32(34, 34, 34, 0);
+            Password[1].color = new Color32 (34,34,34,255);;
+        }
     }
 }
