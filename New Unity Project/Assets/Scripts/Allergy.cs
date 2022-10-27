@@ -25,6 +25,10 @@ public class Allergy : MonoBehaviour
     
         
     }
+    public void Testing()
+    {
+        Debug.Log("TESTCOMPLETE");
+    }
     public void SignInSignUp()
     {
         SignUpText.text = "";
