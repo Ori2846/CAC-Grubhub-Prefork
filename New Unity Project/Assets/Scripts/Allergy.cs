@@ -18,12 +18,23 @@ public class Allergy : MonoBehaviour
     public TMP_Text[] Password;
     public Scrollbar bar;
     public bool barb=false;
+    public GameObject[] Scenes;
 
     
     void Start()
     {
     
         
+    }
+    public void GoToScene(string Scene)
+    {
+        for (int i = 0; i < Scenes.Length; i++)
+        {
+            if(Scenes[i].name != Scene)
+                Scenes[i].SetActive(false);
+            else
+                Scenes[i].SetActive(true);
+        }
     }
     public void Testing()
     {
