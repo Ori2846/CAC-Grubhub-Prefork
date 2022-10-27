@@ -125,4 +125,8 @@ public class Allergy : MonoBehaviour
         barb = true;
 
     }
+    public void SetStore(string Store)
+    {
+        PlayerPrefs.SetString("Store", Store);
+    }
 }
