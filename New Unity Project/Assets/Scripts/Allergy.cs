@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using TMPro;
+using UnityEngine.UI;
 public class Allergy : MonoBehaviour
 {
     
@@ -15,12 +16,40 @@ public class Allergy : MonoBehaviour
     public GameObject SignInPanel; 
     public GameObject MainScreenPanel; 
     public TMP_Text[] Password;
+    public Scrollbar bar;
+    public bool barb=false;
+    public GameObject[] Scenes;
+    private TMP_Text NameTitle;
+    public string Username;
 
     
     void Start()
     {
-    
-        
+    Username = PlayerPrefs.GetString("Username");
+    }
+    public void DeclareUsername()
+    {
+        PlayerPrefs.SetString("Username",GameObject.Find("UsernameText").GetComponent<TMP_Text>().text);
+    }
+    public void GoToScene(string Scene)
+    {
+        for (int i = 0; i < Scenes.Length; i++)
+        {
+            if(Scenes[i].name != Scene)
+                Scenes[i].SetActive(false);
+            else
+                Scenes[i].SetActive(true);
+        }
+        if(Scene == "MainScreen")
+        {
+        NameTitle = GameObject.Find("NameTitle").GetComponent<TMP_Text>();
+        NameTitle.text = PlayerPrefs.GetString("Username"); 
+        }
+            
+    }
+    public void Testing()
+    {
+        Debug.Log("TESTCOMPLETE");
     }
     public void SignInSignUp()
     {
@@ -73,6 +102,19 @@ public class Allergy : MonoBehaviour
             Debug.Log("here");
         }
         Password[1].text = hiddenpassword;
+
+        if(barb)
+        {
+        //bar = gameObject.GetComponent<Scrollbar>();
+        if(bar.value < 1)
+        {
+            bar.value += 0.025f;
+        } else
+        {
+            barb=!barb;
+        }
+        
+        }
     }
     public void ShowPassword()
     {
@@ -86,5 +128,16 @@ public class Allergy : MonoBehaviour
             Password[0].color = new Color32(34, 34, 34, 0);
             Password[1].color = new Color32 (34,34,34,255);;
         }
+    }
+    
+ 
+    public void BackUp()
+    {
+        barb = true;
+
+    }
+    public void SetStore(string Store)
+    {
+        PlayerPrefs.SetString("Store", Store);
     }
 }
