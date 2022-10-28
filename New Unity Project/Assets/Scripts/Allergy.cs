@@ -19,12 +19,17 @@ public class Allergy : MonoBehaviour
     public Scrollbar bar;
     public bool barb=false;
     public GameObject[] Scenes;
+    private TMP_Text NameTitle;
+    public string Username;
 
     
     void Start()
     {
-    
-        
+    Username = PlayerPrefs.GetString("Username");
+    }
+    public void DeclareUsername()
+    {
+        PlayerPrefs.SetString("Username",GameObject.Find("UsernameText").GetComponent<TMP_Text>().text);
     }
     public void GoToScene(string Scene)
     {
@@ -35,6 +40,12 @@ public class Allergy : MonoBehaviour
             else
                 Scenes[i].SetActive(true);
         }
+        if(Scene == "MainScreen")
+        {
+        NameTitle = GameObject.Find("NameTitle").GetComponent<TMP_Text>();
+        NameTitle.text = PlayerPrefs.GetString("Username"); 
+        }
+            
     }
     public void Testing()
     {
