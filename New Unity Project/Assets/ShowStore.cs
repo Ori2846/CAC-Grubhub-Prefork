@@ -22,7 +22,7 @@ public class ShowStore : MonoBehaviour
     {
         for(int i =0;i<StoreLIST.Length;i++)
         {
-            AllergyList.text = StoreALLERGIES[i];
+            Debug.Log(StoreALLERGIES[i]);
         }
         
     }
