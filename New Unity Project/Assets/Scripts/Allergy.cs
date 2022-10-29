@@ -21,6 +21,7 @@ public class Allergy : MonoBehaviour
     public GameObject[] Scenes;
     private TMP_Text NameTitle;
     public string Username;
+    public string StoreName;
 
     
     void Start()
@@ -45,6 +46,7 @@ public class Allergy : MonoBehaviour
         NameTitle = GameObject.Find("NameTitle").GetComponent<TMP_Text>();
         NameTitle.text = PlayerPrefs.GetString("Username"); 
         }
+        
             
     }
     public void Testing()
