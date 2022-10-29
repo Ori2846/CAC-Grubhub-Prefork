@@ -16,7 +16,7 @@ public class SetAllergicItems : MonoBehaviour
     }
     private void OnEnable() {
         GameObject.Find("RestaurantName_Title").GetComponent<TMP_Text>().text = PlayerPrefs.GetString("Store");
-        for(int i =0; i <restaurants.Length-1;i++)
+        for(int i =0; i <restaurants.Length;i++)
         {
             if(GameObject.Find("RestaurantName_Title").GetComponent<TMP_Text>().text == restaurants[i])
             {
