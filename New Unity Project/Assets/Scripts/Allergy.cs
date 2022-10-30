@@ -22,15 +22,22 @@ public class Allergy : MonoBehaviour
     private TMP_Text NameTitle;
     public string Username;
     public string StoreName;
+    public TMP_Text[] TextUsernames;
 
-    
+
+
     void Start()
     {
     Username = PlayerPrefs.GetString("Username");
+
     }
     public void DeclareUsername()
     {
         PlayerPrefs.SetString("Username",GameObject.Find("UsernameText").GetComponent<TMP_Text>().text);
+        foreach (var item in TextUsernames)
+        {
+            item.text = PlayerPrefs.GetString("Username");
+        }
     }
     public void GoToScene(string Scene)
     {
