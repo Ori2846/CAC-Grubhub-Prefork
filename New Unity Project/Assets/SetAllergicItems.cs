@@ -9,6 +9,7 @@ public class SetAllergicItems : MonoBehaviour
     public string SetRest;
     public string Text;
     public string NewText;
+    public int index;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class SetAllergicItems : MonoBehaviour
                 Text = Text.Replace("\t", "\n");
                 gameObject.GetComponent<TMP_Text>().text = Text;
                 SetRest=restaurants[i];
+                index = i;
             }
         }
         

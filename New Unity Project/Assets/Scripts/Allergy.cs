@@ -29,10 +29,17 @@ public class Allergy : MonoBehaviour
     public string[] reviews_;
     private SetAllergicItems SAI;
 
-    public string[,] list = new string[3,4] {
-    {"donny","im loving it,","donny","im loving it"},
-    {"donny1","im loving it1","don234234ny1","im lo23423423ving it1"},
-    {"donny2","im loving it2","do234234nn2y","im lo234234ving i2t"},
+    public string[,] list = new string[4,4] {
+    {"Vincent of Tampa, FL","I went to Applebee's for lunch 2 weeks ago. They had a new menu with a wide variety of items. Their 550 calorie and below selections are all quite good. My server was very friendly and efficient and she kept my drink filled at all times. The quality of the food was excellent and it was priced reasonably.","Jennifer of Mcconnellsburg, PA","We had Zoey. She was a very good waitress. Was very attentive, got our drinks every time we needed it, did not have to ask. Was very nice. Excellent job at everything."},
+    {"Eli of Columbia, MO","My family and I went to McDonald’s on Business Loop the roundabout basically in Columbia and we ordered a McChicken, McDouble a couple of drinks. Fanta, Coke and a Dr. Pepper and a Chicken Nugget Happy Meal. Most of the meal was good but the fries, oh the fries they were absolutely disgusting and undercooked. I might go again but will not get fries.","Manikandan of Other, Other","I have been visited every weekend. And it's a nice place to eats without any disturbance. And make me relax. I love a spicy chicken and kebab wrap lover. Whenever I visit McDonalds I placed this order. And I love that McDonalds black forest as desserts."},
+    {"Josh floranne D.","5 star for the person who helped me alone while his coworker watch him only even people are lining up waiting for their turn to order.","Dana L.","Outstanding service from the night crew. No wait, food was fresh, everyone was friendly! Will be back soon. Restaurant was clean."},
+    {"Josh floranne D.","5 star for the person who helped me alone while his coworker watch him only even people are lining up waiting for their turn to order.","Dana L.","Outstanding service from the night crew. No wait, food was fresh, everyone was friendly! Will be back soon. Restaurant was clean."},
+    };
+    public int[,] list2 = new int[4,2] {
+    {5,4},
+    {2,4},
+    {5,5},
+    {5,5},
     };
 
 
@@ -40,7 +47,6 @@ public class Allergy : MonoBehaviour
     {
     Username = PlayerPrefs.GetString("Username");
     
-    Debug.Log(list[1,1]);
     }
     
     public void DeclareUsername()
@@ -121,7 +127,6 @@ public class Allergy : MonoBehaviour
         for (int i = 1; i < text.Length; i++)
         {
             hiddenpassword += "*";
-            Debug.Log("here");
         }
         Password[1].text = hiddenpassword;
 

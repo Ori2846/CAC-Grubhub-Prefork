@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 public class SetReview : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class SetReview : MonoBehaviour
     public Allergy GameManager;
     public SetAllergicItems SAI;
     public int index;
+    public int Stars;
+    public GameObject[] Stars_;
 
     private void OnEnable() {
 
@@ -29,6 +32,7 @@ public class SetReview : MonoBehaviour
                 {
                     Name.text = GameManager.list[i,0];
                     Review.text = GameManager.list[i,1];
+                    Stars = GameManager.list2[i,0];
                 }
             }
         }
@@ -40,8 +44,16 @@ public class SetReview : MonoBehaviour
                 {
                     Name.text = GameManager.list[i,2];
                     Review.text = GameManager.list[i,3];
+                    Stars = GameManager.list2[i,1];
                 }
             }
+        }
+        for(int i=0; i <Stars_.Length;i++)
+        {
+            if(i< Stars)
+            Stars_[i].GetComponent<Image>().color = new Color32(255, 232, 0, 255);
+            else
+            Stars_[i].GetComponent<Image>().color = new Color32(161, 161, 161, 255);
         }
 
         
