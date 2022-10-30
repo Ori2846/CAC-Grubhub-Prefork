@@ -23,6 +23,11 @@ public class Allergy : MonoBehaviour
     public string Username;
     public string StoreName;
     public TMP_Text[] TextUsernames;
+    public string[][] names;
+    public string[][] reviews;
+    public string[] names_;
+    public string[] reviews_;
+    private SetAllergicItems SAI;
 
 
 
@@ -31,6 +36,7 @@ public class Allergy : MonoBehaviour
     Username = PlayerPrefs.GetString("Username");
 
     }
+    
     public void DeclareUsername()
     {
         PlayerPrefs.SetString("Username",GameObject.Find("UsernameText").GetComponent<TMP_Text>().text);
@@ -103,6 +109,7 @@ public class Allergy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        StoreName = PlayerPrefs.GetString("Store");
         string text = Password[0].text;
         string hiddenpassword = "";
         for (int i = 1; i < text.Length; i++)
