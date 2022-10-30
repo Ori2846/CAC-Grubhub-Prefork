@@ -23,30 +23,27 @@ public class SetReview : MonoBehaviour
         SAI = GameObject.Find("Allergic Items_List").GetComponent<SetAllergicItems>();
         if(gameObject.name == ("Review"))
         {
-            if(GameManager.StoreName == "Mcdonalds")
+            for (int i = 0; i < SAI.restaurants.Length; i++)
+            {
+                if(GameManager.StoreName == SAI.restaurants[i])
                 {
-                    Name.text = "Donny";
-                    Review.text = "im lovin it";
-                }else
-                
-                   Delete(); 
-                
+                    Name.text = GameManager.list[i,0];
+                    Review.text = GameManager.list[i,1];
+                }
+            }
         }
         if(gameObject.name == ("Review (1)"))
         {
-            if(GameManager.StoreName == "Mcdonalds")
+            for (int i = 0; i < SAI.restaurants.Length; i++)
+            {
+                if(GameManager.StoreName == SAI.restaurants[i])
                 {
-                    Name.text = "Donny2";
-                    Review.text = "im lovin it2";
-                } else
-                Delete();
+                    Name.text = GameManager.list[i,2];
+                    Review.text = GameManager.list[i,3];
+                }
+            }
         }
 
         
-    }
-    void Delete()
-    {
-        Name.text = "";
-        Review.text = "";
     }
 }

@@ -29,12 +29,18 @@ public class Allergy : MonoBehaviour
     public string[] reviews_;
     private SetAllergicItems SAI;
 
+    public string[,] list = new string[3,4] {
+    {"donny","im loving it,","donny","im loving it"},
+    {"donny1","im loving it1","don234234ny1","im lo23423423ving it1"},
+    {"donny2","im loving it2","do234234nn2y","im lo234234ving i2t"},
+    };
 
 
     void Start()
     {
     Username = PlayerPrefs.GetString("Username");
-
+    
+    Debug.Log(list[1,1]);
     }
     
     public void DeclareUsername()
