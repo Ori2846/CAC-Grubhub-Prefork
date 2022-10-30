@@ -10,7 +10,8 @@ public class AllergyCheck : MonoBehaviour
     public Image Checkmark;
     void Start()
     {
-        Checkmark = gameObject.transform.Find("Checkmark").GetComponent<Image>();
+        Checkmark = gameObject.transform.Find("Checkmark (1)").Find("Checkmark (2)").Find("Checkmark").GetComponent<Image>();
+        //Checkmark = gameObject.transform.Find("Checkmark").GetComponent<Image>();
         if(PlayerPrefs.GetString("Allergy_"+gameObject.name) == "True")
             Check=true;
         else
